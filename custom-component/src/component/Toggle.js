@@ -13,6 +13,7 @@ const Toggle = () => {
       <div  className={`toggleConatainer ${isOn ? 'toggle-checked' : ''}`}>
         <div onClick={toggleHandler} className={`toggleCircle ${isOn ? 'toggle-checked' : ''}`}></div>
       </div>
+      <h4>{isOn ? 'Toggle Switch ON':'Toggle Swtich OFF'}</h4>
       
     </div>
   );
