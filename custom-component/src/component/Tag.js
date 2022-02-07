@@ -2,32 +2,41 @@ import React, { useState } from "react";
 
 
 const Tag = () => {
-  const [currentTab, setCurrentTab] = useState(0)
+  const [currentTab, setCurrentTab] = useState([])
 
-  const menuArr = [
-      {name:'tab1', content:'Tab menu One'},
-      {name:'tab2', content:'Tab menu Two'},
-      {name:'tab3', content:'Tab menu Three'},
-  ]
+  const tagHandler = (e) => {
+    setCurrentTab([...currentTab, e.target.value])
+    console.log(currentTab)
+  }
+  const removeTags = (index) => {
+    setCurrentTab(currentTab.filter((el, num)=> num !==index))
+  }
 
-  const TabHandler = (index) => {
-    setCurrentTab(index)
+  const onKeyPress = (e) => {
+    if(e.key==='Enter'){
+        tagHandler(e)
+        e.target.value = ''
+    }
   }
   return (
-    <div className="tabWrab">
-      <h1>Tab</h1>
-        <ul className="tabMenu">
-        {
-            menuArr.map((el, index)=>{
-                return (
-                    <li onClick={()=>TabHandler(index)} key={index} className={currentTab===index ? 'submenu focused':'submenu'}>
-                        {el.name}                        
-                    </li>
-                )
-            })
-        }
-        </ul>
-        <div>{menuArr[currentTab].content}</div>
+    <div className="wrab tabWrab">
+      <h1>Tag</h1>
+        <div>
+            <input onKeyPress={(e)=>{onKeyPress(e)}} type="text" placeholder="Press enter to add tags"></input>
+            <ul className="tagMenu">
+            {
+                currentTab.map((el, index)=>{
+                    return (
+                        <li key={index} className="tags">
+                            <span className="title">{el}</span>
+                            <span className="btn" onClick={()=>{removeTags(index)}}>X</span>                 
+                        </li>
+                    )
+                })
+            }
+            </ul>
+        </div>
+        
     </div>
   );
 };

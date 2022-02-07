@@ -10,17 +10,17 @@ const Tab = () => {
       {name:'tab3', content:'Tab menu Three'},
   ]
 
-  const TabHandler = (index) => {
+  const tabHandler = (index) => {
     setCurrentTab(index)
   }
   return (
-    <div className="tabWrab">
+    <div className="wrab tabWrab">
       <h1>Tab</h1>
         <ul className="tabMenu">
         {
             menuArr.map((el, index)=>{
                 return (
-                    <li onClick={()=>TabHandler(index)} key={index} className={currentTab===index ? 'submenu focused':'submenu'}>
+                    <li onClick={()=>tabHandler(index)} key={index} className={currentTab===index ? 'submenu focused':'submenu'}>
                         {el.name}                        
                     </li>
                 )

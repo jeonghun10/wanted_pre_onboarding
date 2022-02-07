@@ -36,7 +36,9 @@
     transform: rotate(360deg);
   }
 }
-
+.wrab {
+  height:15em;
+}
 .toggleConatainer {
   position: relative;
   margin:0 auto;
@@ -154,6 +156,43 @@
   transition: 0.5s;
   color:#fff;
   font-weight: bold;
+}
+
+
+.tagMenu {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  padding: 0;
+
+}
+
+.tags {
+  background-color: indigo;
+  color: #fff;
+  font-weight: 500;
+  padding:0.3em 1em;
+  margin:0 0.5em;
+  border-radius: 0.3em;
+  display: inline-block;
+}
+
+.tags .title {
+  margin:0 1em;
+}
+.tags .btn {
+  display: inline-block;
+  vertical-align: middle;
+  width:1.3em;
+  height:1.3em;
+  color:indigo;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 1em;
+  font-weight: bold;
+  
 }
 
 
