@@ -22,7 +22,7 @@ const Tag = () => {
     <div className="wrab tabWrab">
       <h1>Tag</h1>
         <div>
-            <input onKeyPress={(e)=>{onKeyPress(e)}} type="text" placeholder="Press enter to add tags"></input>
+            <input className="tagInput" onKeyPress={(e)=>{onKeyPress(e)}} type="text" placeholder="Press enter to add tags"></input>
             <ul className="tagMenu">
             {
                 currentTab.map((el, index)=>{
