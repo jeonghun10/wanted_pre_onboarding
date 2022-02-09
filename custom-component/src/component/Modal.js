@@ -8,7 +8,7 @@ const Modal = () => {
       setIsOn(!isOn)
   }
   return (
-    <div className="wrab">
+    <div className="wrap">
       <h1>Modal</h1>
       <div onClick={modalHandler} className={`modalBtn ${isOn ? 'modal-checked' : ''}`}>
         <h4>Open Modal</h4>

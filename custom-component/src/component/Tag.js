@@ -19,7 +19,7 @@ const Tag = () => {
     }
   }
   return (
-    <div className="wrab tabWrab">
+    <div className="wrap tabWrap">
       <h1>Tag</h1>
         <div>
             <input className="tagInput" onKeyPress={(e)=>{onKeyPress(e)}} type="text" placeholder="Press enter to add tags"></input>

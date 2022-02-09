@@ -39,18 +39,25 @@ const AutoComplete = () => {
   const clickHandler = (el)=>{
     setInputText(el)
   }
+  const removeHandler = () => {
+    setMatchInfo([])
+    setUlView(false)
+    setInputText('')
+
+  }
   
   
   return (
-    <div className="wrab">
+    <div className="wrap">
       <h1>AutoComplete</h1>
-        <div>
+        <div className="inputWrap">
             <input className="autoCompleteInput" onChange={(e)=>{autoCompleteHandler(e)}} type="text" value={inputText} ></input>
+            <span className="removebtn" onClick={removeHandler}>X</span>
             {matchInfo.length===0 ? null:
             <ul className={ulView ? "autoList ulView" : "autoList" }>
                 {
-                    matchInfo.map((el)=>{
-                        return <li className="listItem" onClick={()=>{clickHandler(el)}}>{el}</li>
+                    matchInfo.map((el, key)=>{
+                        return <li key={key} className="listItem" onClick={()=>{clickHandler(el)}}>{el}</li>
                     })
                 }
             </ul>

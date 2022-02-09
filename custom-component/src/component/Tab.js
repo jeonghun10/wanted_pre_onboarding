@@ -14,7 +14,7 @@ const Tab = () => {
     setCurrentTab(index)
   }
   return (
-    <div className="wrab tabWrab">
+    <div className="wrap tabWrap">
       <h1>Tab</h1>
         <ul className="tabMenu">
         {

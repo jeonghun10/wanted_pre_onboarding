@@ -8,7 +8,7 @@ const Toggle = () => {
       setIsOn(!isOn)
   }
   return (
-    <div className="wrab">
+    <div className="wrap">
       <h1>Toggle</h1>
       <div  className={`toggleConatainer ${isOn ? 'toggle-checked' : ''}`}>
         <div onClick={toggleHandler} className={`toggleCircle ${isOn ? 'toggle-checked' : ''}`}></div>
